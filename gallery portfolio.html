@@ -1,1 +1,81 @@
-<!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: rgb(180, 255, 177);
+        }
+        .carousel-container {
+            width: 50%;
+            margin: auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel img {
+            width: 100%;
+            border: 2px dotted rgb(22, 79, 55);
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(22, 79, 55, 0.7);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="carousel-container">
+    <div class="carousel" id="carousel">
+        <img src="bug hole print.png" alt="Bug hole">
+        <img src="IMG_1003.jpg" alt="I hate art block">
+        <img src="CLOCKWORK REF NEW.png" alt="Clockwork ref">
+        <img src="IMG_1074.jpg" alt="drahgon">
+        <img src="IMG_1075.jpg" alt="cowboy cat">
+    </div>
+    <button class="prev" onclick="prevSlide()">❮</button>
+    <button class="next" onclick="nextSlide()">❯</button>
+</div>
+
+<button id="button" onclick="window.location.href='Portfolio Claire Burg/index portfolio.html';">back</button>
+
+<script>
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const carousel = document.getElementById("carousel");
+        const imageWidth = document.querySelector(".carousel img").clientWidth;
+        carousel.style.transform = `translateX(${-currentIndex * imageWidth}px)`;
+    }
+
+    function nextSlide() {
+        const totalImages = document.querySelectorAll(".carousel img").length;
+        currentIndex = (currentIndex + 1) % totalImages;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        const totalImages = document.querySelectorAll(".carousel img").length;
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        updateCarousel();
+    }
+
+    window.addEventListener("resize", updateCarousel);
+</script>
+
+</body>
+</html>
