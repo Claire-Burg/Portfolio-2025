@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <title>Gallery</title>
     <style>
         body {
             background-color: rgb(180, 255, 177);
         }
+        p {
+        color:rgb(22, 79, 55);
+        text-align: center;
+        border-style: none none dotted none;
+        background-color: white;
+        border-color: rgb(22, 79, 55);
+    }
+    h1 {
+        text-align: center;
+        color:rgb(22, 79, 55);
+    }
+    button {
+        width: 120px;
+        border-width: 5px;
+        border-color: rgb(22, 79, 55)
+        color: rgb(22,79,55);
+    }
         .carousel-container {
             width: 50%;
             margin: auto;
@@ -42,16 +61,18 @@
 <div class="carousel-container">
     <div class="carousel" id="carousel">
         <img src="bug hole print.png" alt="Bug hole">
-        <img src="IMG_1003.jpg" alt="I hate art block">
+        <img src="Artblock.jpg" alt="I hate art block">
         <img src="CLOCKWORK REF NEW.png" alt="Clockwork ref">
-        <img src="IMG_1074.jpg" alt="drahgon">
-        <img src="IMG_1075.jpg" alt="cowboy cat">
+        <img src="drahgon.png" alt="drahgon">
+        <img src="cowcat.png" alt="cowboy cat">
     </div>
     <button class="prev" onclick="prevSlide()">❮</button>
     <button class="next" onclick="nextSlide()">❯</button>
 </div>
 
-<button id="button" onclick="window.location.href='Portfolio Claire Burg/index portfolio.html';">back</button>
+<a href="index portfolio.html">
+<button id="button">Back</button>
+</a>
 
 <script>
     let currentIndex = 0;
